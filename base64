@@ -1,0 +1,24 @@
+# Encoding files you can't transfer or view
+
+Sometimes a command line shell prevents you from viewing PDF or JPG. Files that normally requires a GUI.
+
+A good idea is to encode the file in base64, copy and paste the output and decode it on another workstation.
+
+1. Encode the document
+
+  user@remote~$ base64 new.pdf
+  ...
+  <output>
+  ...
+
+2. Copy the output
+
+3. Put the output in a local file
+
+  root@localhost~# echo '<output>' > encoded.new.pdf
+  
+4. Decode the file
+
+  root@localhost~# base64 -d local.new.pdf  > decoded.new.pdf
+  
+Use your favorite browser to open the pdf file.
