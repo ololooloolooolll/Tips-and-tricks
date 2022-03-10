@@ -18,10 +18,11 @@ Second, run an Nmap against the output of masscan:
     
 OR...
 
-```
 ## Use this super scanner
 
-    #!/bin/python
+
+```
+#!/bin/python
 
 # Original script:
 # https://raw.githubusercontent.com/Crypto-Cat/CTF/main/pentesting/gen_nmap.py
