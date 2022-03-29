@@ -53,11 +53,11 @@ root@bt# proxychains nmap -sT -p 445 192.168.1.10
 
 General example were you need to cross mutiple secuirty zones:
 
-**Host | Outside | Inside**
-Evil   | 1.1.1.1 | 192.168.1.18
-PubSrv | 192.168.1.22 | 172.16.4.22
-PriSrv | 172.16.4.30 | 10.10.10.30
-DC01   | 10.10.10.10 | 127.0.0.1
+| Host | Outside | Inside |
+| Evil | 1.1.1.1 | 192.168.1.18 |
+| PubSrv | 192.168.1.22 | 172.16.4.22 |
+| PriSrv | 172.16.4.30 | 10.10.10.30 |
+| DC01   | 10.10.10.10 | 127.0.0.1 |
 
 
 1. From the Evil host, connect to the PubSrv
