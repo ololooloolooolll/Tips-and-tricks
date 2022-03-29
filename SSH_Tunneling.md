@@ -53,30 +53,37 @@ root@bt# proxychains nmap -sT -p 445 192.168.1.10
 
 General example were you need to cross mutiple secuirty zones:
 
-**Host**
-Evil    >   Pub_Srv        >    Pri_Srv   > Domain_Controler
-**outside**       
-1.1.1.1     >  192.168.1.22   > 172.16.4.30  > 10.10.10.10 
-**inside**
-192.168.1.18 > 172.16.4.22    > 10.10.10.30  > 127.0.0.1
+**Host | Outside | Inside**
+Evil   | 1.1.1.1 | 192.168.1.18
+PubSrv | 192.168.1.22 | 172.16.4.22
+PriSrv | 172.16.4.30 | 10.10.10.30
+DC01   | 10.10.10.10 | 127.0.0.1
 
-1. From the Evil host, connect to the Pub_Srv
+
+1. From the Evil host, connect to the PubSrv
 
 ```
-evil@bt# ssh -f -N -D 9050 dmz_user@192.168.1.22
+evil@bt# ssh -f -N -D 9050 user@192.168.1.22
    <password>
 ```
-**The default /etc/proxychains4.conf uses 9050**
 
 2. Setup a second tunnel within the first
 
-```
-proxychains ssh -f -N -D 10050 internal_user@172.168.4.30 -p 2222
-```
-**Edit the proxychains4.conf file to use 10050 instead of 9050** 
+**The default /etc/proxychains4.conf uses 9050**
 
-4. Reach the domain controller from the pub_srv
+This command connects to PubSrv:9050 and runs another tunnel on port 10050:
 
 ```
-proxychains rdesktop 10.10.10.10 -u Administrator -p password -g 90%
+evil@bt# proxychains ssh -f -N -D 10050 internal_user@172.168.4.30 -p 2222
+```
+
+3. Reach the domain controller from the pub_srv
+
+**Edit the proxychains4.conf file to use 10050 instead of 9050**
+
+Now, by using the proxychains on port 10050, you should be able to reach the domain controller and scan the network
+
+```
+evil@bt# proxychains nmap -sT 10.0.10.10 -p 445
+evil@bt# proxychains rdesktop 10.10.10.10 -u Administrator -p password -g 90%
 ```
