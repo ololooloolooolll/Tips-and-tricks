@@ -20,7 +20,7 @@ Take that for what you will and your needs.
 General scan:
 
 ```
-gobuster dir -u 10.10.10.1 -w /usr/share/wordlists/dirb/common.txt
+gobuster dir -u 10.10.10.1 -w /usr/share/wordlists/dirb/common.txt -t 20
 ```
 **you have to run gobuster against all found directories**
 10.10.10.1/uploads 10.10.10.1/images etc...
@@ -39,3 +39,5 @@ dirb http://my.target.com/ -X .html
 dirb http://my.target.com/ /usr/share/dirb/wordlists/vulns/apache.txt
 dirb dirbs http://my.securetarget.com/
 ```
+
+
