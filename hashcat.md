@@ -46,7 +46,7 @@ hashcat -a3 -m0 a19a23367dfd388f52c6a55205586646 -1?u?l -2?l?d?s -3?s -4?d ?1cor
 Command explained:
 
 | Arg | Value | Desc |
-|----------|---------|
+|-----|---------|--------|
 | $0 | hashcat | tool invoke |
 |$1 | -a3 | mask mode |
 |$2 | -m0 | md5 hash |
