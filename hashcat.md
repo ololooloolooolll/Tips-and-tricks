@@ -45,17 +45,17 @@ hashcat -a3 -m0 a19a23367dfd388f52c6a55205586646 -1?u?l -2?l?d?s -3?s -4?d ?1cor
 
 Command explained:
 
-| Arg | desc |
+| Arg | Value | Desc |
 |----------|---------|
-| $0 | hashcat, tool invoke |
-|$1 | -a3, mode masked |
-|$2 | -m0, md5 hash |
-|$3 | a19a23367dfd388f52c6a55205586646, value of hash |
-|$4 | -1?u?l, the ?1 character is either uppercase or lowercase |
-|$5 | -2?l?d?s, the ?2 character is either a lowercase, digit or special character |
-|$6 | -3?s, the ?3 character must be special characters |
-|$7 | -4?d, the ?4 is a digit |
-|$8 | ?1c?2rp202?4?3?3, the password looks like this |
+| $0 | hashcat | tool invoke |
+|$1 | -a3 | mask mode |
+|$2 | -m0 | md5 hash |
+|$3 | a19a23367dfd388f52c6a55205586646 | value of hash |
+|$4 | -1?u?l | the ?1 character is either uppercase or lowercase |
+|$5 | -2?l?d? | the ?2 character is either a lowercase, digit or special character |
+|$6 | -3?s | the ?3 character must be special characters |
+|$7 | -4?d | the ?4 is a digit |
+|$8 | ?1c?2rp202?4?3?3 | the password looks like this |
 
 topology hints:
 - May or may not start with a captial letter
