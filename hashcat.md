@@ -24,7 +24,7 @@ $6^zS7kHfFMg3aYht4$1IUrhZanRuDZhf1oIdnoOvXoolKmlwbkegBXk.VtGg78eL7WBM60rNtGbZxKB
 
 ---
 
-## Partially known passwords
+## Partially known passwords, known-ish topology
 
 1. get the hash you're looking for.
 
